@@ -95,7 +95,7 @@ COPY parliament2.py .
 COPY parliament2.sh .
 COPY svtyper_env.yml .
 
-RUN conda create -y --name svviz_env svviz
+#RUN conda create -y --name svviz_env svviz
 # We have to use a slightly different method for
 # svtyper as it installs software directly from git
 RUN conda env create --name svtyper_env --file svtyper_env.yml
@@ -113,4 +113,3 @@ WORKDIR /home/dnanexus
 RUN ["chmod", "+x", "parliament2.py"]
 RUN ["chmod", "+x", "parliament2.sh"]
 
-ENTRYPOINT ["python","/home/dnanexus/parliament2.py"]
